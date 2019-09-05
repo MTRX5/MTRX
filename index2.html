@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CSS Spoiler</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/modernizr/2.8.3/modernizr.min.js"
+            type="text/javascript"></script>
+
+
+    <style>
+        /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+        input[id^="spoiler"] {
+            display: none;
+        }
+
+        input[id^="spoiler"] + label {
+            display: block;
+            width: 200px;
+            margin: 0 auto;
+            padding: 5px 20px;
+            background: #e1a;
+            color: #fff;
+            text-align: center;
+            font-size: 24px;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all .6s;
+        }
+
+        input[id^="spoiler"]:checked + label {
+            color: #333;
+            background: #ccc;
+        }
+
+        input[id^="spoiler"] ~ .spoiler {
+            width: 90%;
+            height: 0;
+            overflow: hidden;
+            opacity: 0;
+            margin: 10px auto 0;
+            padding: 10px;
+            background: #eee;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            transition: all .6s;
+        }
+
+        input[id^="spoiler"]:checked + label + .spoiler {
+            height: auto;
+            opacity: 1;
+            padding: 10px;
+        }
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+
+<body>
+
+<input type="checkbox" id="spoiler2"/>
+<label for="spoiler2">Spoiler</label>
+<div class="spoiler">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu sodales tortor, posuere mattis nunc. Integer eget
+    sapien ullamcorper diam mollis laoreet. Praesent dignissim id urna at malesuada. Etiam id nisl vitae ante vestibulum
+    volutpat.
+    <br/><br/>
+    Etiam congue, neque a commodo iaculis, nisl massa varius felis, eget commodo eros mauris vitae felis. Pellentesque
+    sed nisi bibendum, faucibus lectus id, varius metus. Vestibulum lacinia vehicula justo, ut molestie magna tincidunt
+    nec. Suspendisse sit amet sagittis enim.
+</div>
+<p style="text-align:center;">Contenido normal intercalado sin spoiler</p>
+<input type="checkbox" id="spoiler"/>
+<label for="spoiler">Spoiler</label>
+<div class="spoiler">
+    Una forma de esconder cierta información hasta que el usuario hace clic para visualizarla. Una forma de esconder
+    cierta información hasta que el usuario hace clic para visualizarla.
+    <br/><br/>
+    <img style="display:block;margin: 0 auto;" src="http://lorempixel.com/400/100/technics"/>
+</div>
+<p style="text-align:center;">Contenido normal intercalado sin spoiler</p>
+<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+
+</body>
+
+</html>
